@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "52e629d6-b014-4ca6-844a-3fbc59c033ae",
+    "nombre": "Carlos Morán ",
+    "email": "",
+    "telefono": "",
+    "numeroInvitados": 1,
+    "confirmado": true,
+    "urlUnica": "carlos-moran--ilf9a5",
+    "fechaConfirmacion": "2025-03-14T20:33:45.657Z"
+  }
+]

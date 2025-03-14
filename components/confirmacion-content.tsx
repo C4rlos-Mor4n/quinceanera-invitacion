@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Calendar, Clock, MapPin, PartyPopper } from "lucide-react"
+import { Calendar, Clock, MapPin, PartyPopper, Users } from "lucide-react"
 import { getInvitadoById, confirmarAsistencia, addInvitado } from "@/services/api"
 
 interface ConfirmacionContentProps {
@@ -170,6 +170,15 @@ export function ConfirmacionContent({ id }: ConfirmacionContentProps) {
                 <p className="font-medium text-sm sm:text-base">Salón de eventos Buganvilla</p>
               </div>
             </div>
+
+            <div className="flex items-center gap-2 sm:gap-3">
+              <Users className="h-4 w-4 sm:h-5 sm:w-5 text-gold" />
+              <div>
+                <p className="font-medium text-sm sm:text-base">
+                  {invitado?.numeroInvitados || 1} {invitado?.numeroInvitados === 1 ? "Invitado" : "Invitados"}
+                </p>
+              </div>
+            </div>
           </div>
 
           {confirmado ? (
@@ -196,10 +205,6 @@ export function ConfirmacionContent({ id }: ConfirmacionContentProps) {
             </div>
           ) : (
             <div className="space-y-3 sm:space-y-4">
-              <p className="text-center text-xs sm:text-sm text-muted-foreground">
-                Reservamos {invitado?.numeroInvitados || 1} {invitado?.numeroInvitados === 1 ? "lugar" : "lugares"} para
-                ti.
-              </p>
               <Button
                 variant="gold"
                 className="w-full py-3 sm:py-6 text-sm sm:text-lg animate-pulse hover:animate-none"
@@ -214,4 +219,3 @@ export function ConfirmacionContent({ id }: ConfirmacionContentProps) {
     </div>
   )
 }
-
