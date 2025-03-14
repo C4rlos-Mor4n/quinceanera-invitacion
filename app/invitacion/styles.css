@@ -1,0 +1,49 @@
+/* Efectos de brillo para elementos dorados */
+.gold-text {
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+.gold-border {
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+/* Animación de partículas para el fondo */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+    opacity: 0.7;
+  }
+}
+
+.floating-particle {
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-particle:nth-child(2n) {
+  animation-duration: 12s;
+  animation-delay: 1s;
+}
+
+.floating-particle:nth-child(3n) {
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+/* Efecto de transición suave para hover */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+

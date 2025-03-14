@@ -1,0 +1,32 @@
+[
+  {
+    "id": "c0074fcd-1c62-4604-9b2a-954e1fd2d767",
+    "nombre": "Denisse",
+    "email": "carlitosmoran245@gmail.com",
+    "telefono": "0959623351",
+    "numeroInvitados": 2,
+    "confirmado": true,
+    "urlUnica": "denisse-r6fg9l",
+    "fechaConfirmacion": "2025-03-07T17:22:39.084Z"
+  },
+  {
+    "id": "cc7598d4-f5c2-499b-9eb0-fe40730e8384",
+    "nombre": "Carlos Morán ",
+    "email": "carlitosmoran245@gmail.com",
+    "telefono": "0959623351",
+    "numeroInvitados": 3,
+    "confirmado": true,
+    "urlUnica": "carlos-moran--h2ja8a",
+    "fechaConfirmacion": "2025-03-07T17:33:04.221Z"
+  },
+  {
+    "id": "9e240631-28bf-47a5-b552-ae990ce55765",
+    "nombre": "Adriana Vallejo ",
+    "email": "",
+    "telefono": "",
+    "numeroInvitados": 1,
+    "confirmado": false,
+    "urlUnica": "adriana-vallejo--24mrbu"
+  }
+]
+
