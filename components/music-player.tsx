@@ -15,7 +15,7 @@ export function MusicPlayer({ autoPlay = false, className = "" }: MusicPlayerPro
   const [isMuted, setIsMuted] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
-  const songUrl = "https://s51.aconvert.com/convert/p3r68-cdx67/il7wp-wdyt0.mp3"
+  const songUrl = "/music/celebration.mp3" // Updated to use local file from public folder
 
   useEffect(() => {
     // Inicializar el audio
@@ -109,4 +109,3 @@ export function MusicPlayer({ autoPlay = false, className = "" }: MusicPlayerPro
     </Card>
   )
 }
-
