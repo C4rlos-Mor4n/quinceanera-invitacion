@@ -4,7 +4,7 @@ import { getInvitadoByUrl, crearInvitadoTemporal } from "@/lib/json-store"
 // GET /api/invitados/url/:urlUnica - Obtener un invitado por URL única
 export async function GET(request: NextRequest, { params }: { params: { urlUnica: string } }) {
   try {
-    const urlUnica = params.urlUnica
+    const { urlUnica } = await Promise.resolve(params)
     const invitado = getInvitadoByUrl(urlUnica)
 
     if (!invitado) {

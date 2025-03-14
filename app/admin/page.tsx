@@ -96,11 +96,35 @@ export default function AdminPage() {
     }
   }
 
-  const copyToClipboard = (url: string, id: string) => {
-    const fullUrl = `${window.location.origin}/invitacion/${url}`
-    navigator.clipboard.writeText(fullUrl)
-    setCopiado(id)
-    setTimeout(() => setCopiado(null), 2000)
+  const copyToClipboard = async (url: string, id: string) => {
+    try {
+      const fullUrl = `${window.location.origin}/invitacion/${url}`
+      
+      // Check if running in browser environment and clipboard API is available
+      if (typeof window !== 'undefined' && navigator.clipboard) {
+        await navigator.clipboard.writeText(fullUrl)
+        setCopiado(id)
+        setTimeout(() => setCopiado(null), 2000)
+      } else {
+        // Fallback for environments where clipboard API is not available
+        const textArea = document.createElement('textarea')
+        textArea.value = fullUrl
+        document.body.appendChild(textArea)
+        textArea.select()
+        try {
+          document.execCommand('copy')
+          setCopiado(id)
+          setTimeout(() => setCopiado(null), 2000)
+        } catch (err) {
+          console.error('Fallback: Oops, unable to copy', err)
+          alert("No se pudo copiar al portapapeles")
+        }
+        document.body.removeChild(textArea)
+      }
+    } catch (error) {
+      console.error("Error copying to clipboard:", error)
+      alert("No se pudo copiar al portapapeles")
+    }
   }
 
   // Función para manejar cambios en el número de invitados
@@ -262,4 +286,3 @@ export default function AdminPage() {
     </div>
   )
 }
-

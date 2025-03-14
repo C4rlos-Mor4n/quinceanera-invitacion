@@ -4,7 +4,7 @@ import { getInvitadoById, updateInvitado, deleteInvitado } from "@/lib/json-stor
 // GET /api/invitados/:id - Obtener un invitado por ID
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const id = params.id
+    const { id } = await Promise.resolve(params)
     const invitado = getInvitadoById(id)
 
     if (!invitado) {
@@ -21,7 +21,7 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
 // PUT /api/invitados/:id - Actualizar un invitado
 export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const id = params.id
+    const { id } = await Promise.resolve(params)
     const body = await request.json()
 
     const invitadoActualizado = updateInvitado(id, body)
@@ -40,7 +40,7 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
 // DELETE /api/invitados/:id - Eliminar un invitado
 export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const id = params.id
+    const { id } = await Promise.resolve(params)
     const success = deleteInvitado(id)
 
     if (!success) {

@@ -4,7 +4,7 @@ import { confirmarAsistencia } from "@/lib/json-store"
 // POST /api/invitados/:id/confirmar - Confirmar asistencia
 export async function POST(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const id = params.id
+    const { id } = await Promise.resolve(params)
     const invitadoActualizado = confirmarAsistencia(id)
 
     if (!invitadoActualizado) {

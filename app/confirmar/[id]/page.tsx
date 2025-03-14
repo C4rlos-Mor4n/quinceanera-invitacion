@@ -11,7 +11,9 @@ interface ConfirmarPageProps {
   }
 }
 
-export default function ConfirmarPage({ params }: ConfirmarPageProps) {
+export default async function ConfirmarPage({ params }: ConfirmarPageProps) {
+  const { id } = await Promise.resolve(params)
+  
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -23,7 +25,7 @@ export default function ConfirmarPage({ params }: ConfirmarPageProps) {
             </div>
           }
         >
-          <ConfirmacionContent id={params.id} />
+          <ConfirmacionContent id={id} />
         </Suspense>
       </main>
       <Footer />

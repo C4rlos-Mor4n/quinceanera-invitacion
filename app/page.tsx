@@ -62,7 +62,7 @@ export default function HomePage() {
 
             {error && <p className="text-sm text-destructive text-center">{error}</p>}
 
-            <Button type="submit" className="w-full" variant="gold">
+            <Button type="submit" className="w-full" color="Gold">
               Iniciar Sesión
             </Button>
           </form>
